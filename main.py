@@ -64,9 +64,15 @@ while True:
     
     ds.fill(black)
     maze.draw(ds)
-    hero.draw(ds)
     XiaoRed.draw(ds)
-    
+    hero.draw(ds)
+    if hero.x==XiaoRed.x and hero.y==XiaoRed.y:
+        ds.fill(white)
+        font=pygame.font.Font(None,50)
+        text=f"You win ! ! !"
+        pos=(XiaoRed.x-100,XiaoRed.y-100)
+        sur=font.render(text,True,red)
+        ds.blit(sur,pos) 
     pygame.display.flip()     
 
     clock.tick(60)
